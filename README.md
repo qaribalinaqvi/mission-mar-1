@@ -7,7 +7,7 @@
 
 ---
 
-## 👥 The Team Behind Mission Mars 1.0
+## The Team Behind Mission Mars 1.0
 
 | Name | GitHub |
 | :--- | :--- |
@@ -16,8 +16,6 @@
 | **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz.01) |
 | **Syed Muhammad Ali Hussain** | [@ma931816](https://github.com/ma931816) |
 | **Syed Khesham Ali** | [@shahsawar](https://github.com/shahsawar) |
-
----
 
 ---
 
@@ -50,19 +48,23 @@ flowchart LR
         Tiles["Viking 232m Optical\nMOLA 463m Relief\nTHEMIS 100m Day IR"]
     end
 
-    subgraph AWS_Cloud ["AWS Cloud Backend (CloudFront HTTPS → Nginx → EC2)"]
-        API["FastAPI Service (main.py)\nPOST /api/plan-route | GET /"]
-        Slicer["Windowed Slicer (terrain.py)\nload_route_window(start, end)"]
+    subgraph AWS_Cloud ["AWS Cloud (EC2 Linux Instance)"]
+        SG["Security Group\n• Port 80: 0.0.0.0/0 (HTTP API)\n• Port 22: My IP (SSH)"]
+        Docker["Docker Container (nasa-app)\nRegistry: ma931816/nasa-app-repo:latest\nPort Bindings: 80:8000 & 8000:8000"]
+        API["FastAPI Backend (main.py)\nPOST /api/plan-route | GET /"]
+        Slicer["Windowed Slicer (terrain.py)"]
         MMap[("mars_mola_dem.npy\n23,040 × 46,080 int16\nmmap_mode='r' (~0 MB RAM)")]
         AStar["Raw 3-Mode A* Engine (router_engine.py)\nSafest | Science | Fastest"]
     end
 
     UI <-->|"WMTS Tiles (EPSG:4326)"| Tiles
-    UI -->|"JSON {start, end, mode}"| API
+    UI -->|"HTTP POST /api/plan-route"| SG
+    SG --> Docker
+    Docker --> API
     API --> Slicer
     Slicer <-->|"Microsecond Disk Slice"| MMap
     Slicer -->|"TerrainGrid (float32)"| AStar
-    AStar -->|"Raw Cell Waypoints + Verdict"| API
+    AStar -->|"Raw Cell Waypoints + Safety Verdict"| API
     API -->|"RouteResponse JSON"| Geo
     Geo --> UI
 ```
@@ -70,6 +72,7 @@ flowchart LR
 ### Core Engineering Invariants
 * **Zero-GDAL / Zero-Rasterio Runtime**: The raw $2.1\text{ GB}$ USGS GeoTIFF is converted ahead-of-time via `convert_mola.py` into `data/mars_mola_dem.npy` (`int16`). Production servers run strictly on lightweight `fastapi`, `uvicorn`, `numpy`, and `pydantic`.
 * **Microsecond Memory-Mapped Slicing**: `np.load("data/mars_mola_dem.npy", mmap_mode="r")` maps the global elevation matrix directly to virtual memory—local crater routes ($\le 300 \times 300$ cells) preserve **100% of native `463 m/px` cells**, while continent-spanning expeditions stride cleanly to $\le 300 \times 300$ for sub-$40\text{ ms}$ execution.
+* **Pre-Packaged Docker Distribution**: The complete backend application and processed DEM binary are pre-baked into a production Docker image published to Docker Hub, eliminating the need to download or process multi-gigabyte rasters on each deploy.
 * **Raw, Unsmoothed A\* Fidelity**: Artificial curve smoothing is intentionally omitted so every discrete grid detour, ridge contour, and elevation sample from the DEM is preserved verbatim.
 
 ---
@@ -127,6 +130,7 @@ mission-mars-1.0/
 │   ├── data/
 │   │   ├── mars_mola_dem.npy           # (Ignored in Git) 1.98 GB int16 global MOLA array
 │   │   └── mars_mola_meta.json         # Raster dimensions, datum & coordinate metadata
+│   ├── Dockerfile                      # Production container recipe published to Docker Hub
 │   ├── convert_mola.py                 # One-time streaming GeoTIFF → .npy converter
 │   ├── terrain.py                      # Memory-mapped bounding-box slicer & metric geometry
 │   ├── router_engine.py                # 3-mode obstacle-avoiding A* pathfinder
@@ -141,35 +145,57 @@ mission-mars-1.0/
 
 ## 6. Local Development Setup
 
-### Prerequisites
-* **Node.js** `v18+` & **npm** `v9+`
-* **Python** `3.10+`
-* NASA MGS MOLA Global GeoTIFF (`mola128_mola64_merge_90Nto90S_SimpleC_clon0.tif`)
+### Option A: Run via Docker (Recommended)
 
-### 1. Start the FastAPI Backend
+Run the backend immediately with the pre-compiled elevation model:
+
+* **Docker Hub Repository**: [hub.docker.com/r/ma931816/nasa-app-repo](https://hub.docker.com/r/ma931816/nasa-app-repo)
+* **Docker Hub History URL**: [hub.docker.com/repository/docker/ma931816/nasa-app-repo](https://hub.docker.com/repository/docker/ma931816/nasa-app-repo)
+
+```bash
+# Pull and start the backend
+docker run -d \
+  --name mission-mars-backend \
+  --restart unless-stopped \
+  -p 8000:8000 \
+  ma931816/nasa-app-repo:latest
+
+# Verify health status
+curl http://localhost:8000/
+```
+
+Then start the frontend:
+```bash
+cd martian-map-frontend
+npm install
+echo "VITE_API_URL=http://localhost:8000" > .env
+npm run dev
+```
+
+---
+
+### Option B: Build from Source
+
+#### 1. Start the FastAPI Backend
 ```bash
 cd martian-map-backend
 python -m venv .venv
-source .venv/bin/activate        # On Windows: .\.venv\Scripts\Activate.ps1
+source .venv/bin/activate        # Windows: .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 # One-time conversion if data/mars_mola_dem.npy is not yet generated:
 pip install rasterio
 python convert_mola.py
 
-# Launch API server on http://localhost:8000
+# Launch server
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-### 2. Start the React Frontend
+#### 2. Start the React Frontend
 ```bash
 cd martian-map-frontend
 npm install
-
-# Configure backend URL
 echo "VITE_API_URL=http://localhost:8000" > .env
-
-# Launch Vite dev server on http://localhost:5173
 npm run dev
 ```
 
@@ -218,20 +244,72 @@ npm run dev
 
 ---
 
-## 8. Production Cloud Architecture (Vercel + AWS)
+## 8. AWS EC2 Production Deployment Guide
 
-* **Frontend (`Vercel`)**: Hosted as a static Vite production bundle (`npm run build` $\rightarrow$ `dist/`), streaming NASA Trek WMTS tiles directly over HTTPS from `trek.nasa.gov`.
-* **Backend (`AWS EC2 + CloudFront`)**:
-  * **EC2 (`t3.small`, Ubuntu 24.04, 20 GB gp3 SSD)**: Stores `data/mars_mola_dem.npy` on local NVMe storage and runs `uvicorn` under `systemd` + `Nginx` with near-zero RAM usage via `mmap_mode="r"`.
-  * **AWS CloudFront**: Provides HTTPS termination (`https://*.cloudfront.net`) in front of EC2 so the HTTPS Vercel frontend communicates with FastAPI without browser Mixed Content blocks.
+This section outlines the exact steps used to deploy the containerized FastAPI backend onto an Amazon Web Services (AWS) EC2 instance.
 
+### 1. Docker Registry References
+* **Repository**: [hub.docker.com/r/ma931816/nasa-app-repo](https://hub.docker.com/r/ma931816/nasa-app-repo)
+* **Build & Release History**: [hub.docker.com/repository/docker/ma931816/nasa-app-repo](https://hub.docker.com/repository/docker/ma931816/nasa-app-repo)
+* **Image Tag**: `ma931816/nasa-app-repo:latest`
+
+### 2. AWS Security Group Rules
+Configure your EC2 Security Group with the following inbound rules:
+
+| Type | Protocol | Port Range | Source | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **HTTP** | TCP | `80` | `0.0.0.0/0` | Public API access for frontend path calculations |
+| **Custom TCP** | TCP | `8000` | `0.0.0.0/0` | Direct backend port access (optional) |
+| **SSH** | TCP | `22` | `My IP` | Secure administrative shell access |
+
+### 3. Deployment Commands on EC2
+
+SSH into your EC2 instance and execute the following sequence:
+
+```bash
+# 1. Update system packages and install Docker (Amazon Linux 2023 / AL2)
+sudo dnf update -y && sudo dnf install -y docker
+
+# 2. Enable and start the Docker service
+sudo systemctl enable --now docker
+
+# 3. Add the current user to the docker group
+sudo usermod -aG docker $USER
+newgrp docker
+
+# 4. Pull and run the container with host port mapping
+docker run -d \
+  --name nasa-app \
+  --restart always \
+  -p 80:8000 \
+  -p 8000:8000 \
+  ma931816/nasa-app-repo:latest
+
+# 5. Verify that the container is running
+docker ps
+
+# 6. Test the API endpoint locally
+curl http://localhost/
+```
+
+### 4. Container Management Reference
+
+```bash
+# View live application logs
+docker logs -f nasa-app
+
+# Restart the service
+docker restart nasa-app
+
+# Upgrade to a new image release
+docker pull ma931816/nasa-app-repo:latest
+docker stop nasa-app && docker rm nasa-app
+docker run -d --name nasa-app --restart always -p 80:8000 -p 8000:8000 ma931816/nasa-app-repo:latest
+```
 
 ---
 
-
----
-
-## 10. Credits & Acknowledgments
+## 9. Credits & Acknowledgments
 
 * **NASA / JPL-Caltech / USGS Astrogeology Science Center**: Planetary Equirectangular WMTS mosaics and MOLA MEGDR datasets.
 * **Mars Global Surveyor (MGS) MOLA Science Team**: Global Martian laser altimetry.
