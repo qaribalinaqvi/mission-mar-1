@@ -1,0 +1,132 @@
+[
+  {
+    "id": "octavia-butler",
+    "name": "Octavia E. Butler Landing Base",
+    "lat": 18.4447,
+    "lng": 77.4508,
+    "rock_unit": "Crater Floor Fractured Rough (Cf-fr)",
+    "science_note": "Primary EVA Habitat & Staging Zone. Flat basaltic-olivine floor unit (<4° slope), ideal for astronaut egress and rover staging.",
+    "sol": 2,
+    "priority": "Base"
+  },
+  {
+    "id": "kodiak-butte",
+    "name": "Kodiak Butte Delta Remnant",
+    "lat": 18.4310,
+    "lng": 77.4195,
+    "rock_unit": "Deltaic Layered Mudstone & Sandstone (Dl)",
+    "science_note": "Erosional remnant proving Jezero once held a lake. Key stratigraphic target for preserved ancient biosignatures.",
+    "sol": 150,
+    "priority": "High"
+  },
+  {
+    "id": "three-forks",
+    "name": "Three Forks Sample Depot",
+    "lat": 18.4585,
+    "lng": 77.4240,
+    "rock_unit": "Western Delta Front (Df)",
+    "science_note": "NASA's Mars Sample Return depot site featuring fine-grained sulfate and clay-bearing lakebed sediments.",
+    "sol": 630,
+    "priority": "High"
+  },
+  {
+    "id": "bright-angel",
+    "name": "Bright Angel & Neretva Vallis",
+    "lat": 18.4810,
+    "lng": 77.3850,
+    "rock_unit": "Ancient River Channel Mudstones (Nva)",
+    "science_note": "Light-toned mudstones in Neretva Vallis containing complex organic carbon compounds and mineral veins.",
+    "sol": 1175,
+    "priority": "Critical"
+  },
+  {
+    "id": "seitah-dunes",
+    "name": "South Séítah Olivine Ridges",
+    "lat": 18.4220,
+    "lng": 77.4410,
+    "rock_unit": "Crater Floor Fractured 1 (Cf-f-1)",
+    "science_note": "Coarse-grained igneous cumulate rocks altered by water, bordered by aeolian sand ripples.",
+    "sol": 205,
+    "priority": "Medium"
+  },
+  {
+    "id": "western-rim-breach",
+    "name": "Jezero Western Crater Rim",
+    "lat": 18.5150,
+    "lng": 77.3550,
+    "rock_unit": "Noachian Crater Rim Breccia (Ncr)",
+    "science_note": "3.9-billion-year-old uplifted rim rock. Extreme slopes (>22°) exceed safe spacesuit mobility limits.",
+    "sol": 1350,
+    "priority": "Hazardous"
+  },
+  {
+    "id": "gale-crater",
+    "name": "Gale Crater & Mount Sharp (Aeolis Mons)",
+    "lat": -5.4,
+    "lng": 137.8,
+    "rock_unit": "Layered Sulfate & Clay Sedimentary Strata (S-cl)",
+    "science_note": "Curiosity Rover exploration site featuring 5 km high central mound documenting Mars transition from wet to arid climate.",
+    "sol": 354,
+    "priority": "Critical"
+  },
+  {
+    "id": "olympus-mons",
+    "name": "Olympus Mons Summit & Caldera",
+    "lat": 18.65,
+    "lng": -133.8,
+    "rock_unit": "Amazonian Tholeiitic Basalt Shield (A-thb)",
+    "science_note": "Tallest volcano in the Solar System (21.2 km elevation). Basaltic lava tubes and sheer circumferential escarpment.",
+    "sol": 500,
+    "priority": "Hazardous"
+  },
+  {
+    "id": "valles-marineris",
+    "name": "Valles Marineris (Coprates Chasma)",
+    "lat": -13.9,
+    "lng": -59.2,
+    "rock_unit": "Tectonic Rift Wall & Landslide Breccia (H-rf)",
+    "science_note": "Grand canyon system of Mars (up to 7 km deep). Layered wall rock reveals ancient crustal stratigraphy and recurring slope lineae.",
+    "sol": 750,
+    "priority": "Critical"
+  },
+  {
+    "id": "elysium-planitia",
+    "name": "Elysium Planitia Volcanic Plains",
+    "lat": 4.5,
+    "lng": 135.6,
+    "rock_unit": "Young Amazonian Flood Basalt (A-fb)",
+    "science_note": "InSight Lander geophysical station measuring Martian seismic tremors and core boundary depths on smooth volcanic plains.",
+    "sol": 100,
+    "priority": "High"
+  },
+  {
+    "id": "hellas-planitia",
+    "name": "Hellas Impact Basin Floor",
+    "lat": -42.4,
+    "lng": 70.5,
+    "rock_unit": "Noachian Basinal Impact Sediments (N-bs)",
+    "science_note": "Deepest impact structure on Mars (-8.2 km datum elevation). Thick atmospheric column and potential glacial landforms.",
+    "sol": 400,
+    "priority": "Medium"
+  },
+  {
+    "id": "gusev-crater",
+    "name": "Gusev Crater & Columbia Hills",
+    "lat": -14.6,
+    "lng": 175.4,
+    "rock_unit": "Hydrothermal Silica & Volcanic Tuff (H-sil)",
+    "science_note": "Spirit Rover exploration zone featuring ancient hydrothermal silica deposits indicating extinct hot spring environments.",
+    "sol": 180,
+    "priority": "High"
+  },
+  {
+    "id": "meridiani-planum",
+    "name": "Meridiani Planum Hematite Plains",
+    "lat": -1.9,
+    "lng": -5.5,
+    "rock_unit": "Sulfate-Rich Sandstone with Hematite Concretions (H-hem)",
+    "science_note": "Opportunity Rover landing zone famous for hematite 'blueberries' and ancient acidic groundwater evaporation sequences.",
+    "sol": 90,
+    "priority": "High"
+  }
+]

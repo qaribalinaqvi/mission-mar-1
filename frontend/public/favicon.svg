@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <!-- Mars Surface Gradient -->
+    <radialGradient id="marsSurface" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ff9e75"/>
+      <stop offset="40%" stop-color="#d46137"/>
+      <stop offset="75%" stop-color="#802a14"/>
+      <stop offset="100%" stop-color="#381008"/>
+    </radialGradient>
+    
+    <!-- Atmosphere Glow -->
+    <radialGradient id="atmoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="75%" stop-color="#e0845e" stop-opacity="0"/>
+      <stop offset="94%" stop-color="#e0845e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#e0845e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Clip Path for Planet Body -->
+    <clipPath id="planetClip">
+      <circle cx="32" cy="32" r="22.5"/>
+    </clipPath>
+  </defs>
+
+  <!-- Atmosphere outer glow -->
+  <circle cx="32" cy="32" r="26" fill="url(#atmoGlow)" />
+
+  <!-- Planet Base Sphere -->
+  <circle cx="32" cy="32" r="22.5" fill="url(#marsSurface)" />
+
+  <!-- Planetary Surface Details -->
+  <g clip-path="url(#planetClip)">
+    <!-- Polar Ice Cap -->
+    <ellipse cx="32" cy="11.5" rx="8.5" ry="3" fill="#fbede6" opacity="0.9"/>
+    <ellipse cx="32" cy="12" rx="5.5" ry="1.8" fill="#ffffff" opacity="0.95"/>
+
+    <!-- Dark Mare / Topography Shading -->
+    <path d="M12 28 C18 24, 25 31, 35 29 C44 27, 49 33, 55 31 C56 36, 48 38, 38 35 C28 32, 20 40, 14 36 Z" fill="#4d1b0e" opacity="0.5"/>
+    <path d="M18 41 C24 37, 32 43, 40 39 C46 36, 50 42, 52 45 C44 48, 34 46, 26 48 C19 49, 17 44, 18 41 Z" fill="#351007" opacity="0.55"/>
+
+    <!-- Topographic / Orbital Latitude Curves -->
+    <ellipse cx="32" cy="24" rx="21" ry="6.5" stroke="#f69871" stroke-width="0.8" fill="none" opacity="0.3" stroke-dasharray="2.5 2"/>
+    <ellipse cx="32" cy="33" rx="22.5" ry="7.5" stroke="#f69871" stroke-width="0.8" fill="none" opacity="0.35" stroke-dasharray="3 2"/>
+    <ellipse cx="32" cy="42" rx="20" ry="6.5" stroke="#f69871" stroke-width="0.8" fill="none" opacity="0.3" stroke-dasharray="2.5 2"/>
+  </g>
+
+  <!-- Planetary Orbital Ring -->
+  <ellipse cx="32" cy="32" rx="28.5" ry="10" stroke="#fca37d" stroke-width="1.6" fill="none" transform="rotate(-25 32 32)" stroke-dasharray="48 6 12 6" opacity="0.9"/>
+
+  <!-- Glowing Telemetry Beacon / Active Mission Point -->
+  <circle cx="36" cy="26" r="2.2" fill="#10b981"/>
+  <circle cx="36" cy="26" r="4.2" stroke="#10b981" stroke-width="0.9" opacity="0.85"/>
+</svg>

@@ -1,0 +1,17 @@
+{
+  "source": "NASA MGS MOLA MEGDR 128px/deg (463 m/px)",
+  "shape": [
+    23040,
+    46080
+  ],
+  "dtype": "int16",
+  "lat_min": -90.0,
+  "lat_max": 90.0,
+  "lon_min": -180.0,
+  "lon_max": 180.0,
+  "native_resolution_m": 463.0,
+  "mars_radius_m": 3389500.0,
+  "elevation_min_m": -8201,
+  "elevation_max_m": 21241,
+  "created_at_epoch": 1794675155.206794
+}

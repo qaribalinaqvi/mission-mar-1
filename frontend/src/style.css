@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root{font-family:'Poppins',sans-serif;color:#e8e5dd;background:#10110f;font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:2px solid #dc825c;outline-offset:2px}.app{height:100vh;min-height:620px;display:flex;flex-direction:column;overflow:hidden}.topbar{height:72px;flex:none;display:flex;align-items:center;padding:0 30px;background:#141512;border-bottom:1px solid #2c2d28;z-index:800}.brand{display:flex;align-items:center;gap:11px;min-width:241px}.brand-mark{width:33px;height:33px;border:1px solid #df865f;border-radius:50%;position:relative;transform:rotate(-24deg);overflow:hidden}.brand-mark:before,.brand-mark:after,.brand-mark span{content:'';position:absolute;border:1px solid #df865f;border-radius:50%;width:39px;height:12px;left:-4px}.brand-mark:before{top:5px}.brand-mark:after{top:13px}.brand-mark span{top:21px}.brand-name{font-weight:700;font-size:15px;letter-spacing:2.3px;line-height:1}.brand-name span{font-weight:400;color:#d9815f}.brand-sub{font-family:'Poppins',sans-serif;color:#85857a;font-size:7px;letter-spacing:1.5px;margin-top:6px}.top-divider{height:26px;width:1px;background:#34352f;margin-right:24px}.header-label,.header-data,.nasa-link{font-family:'Poppins',sans-serif;font-size:9px;letter-spacing:1px}.header-label{color:#b9b7ac}.muted{color:#57584f;padding:0 10px}.live-dot,.orange-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#d58260;margin-right:9px;vertical-align:middle}.live-dot{background:#a5b48e;box-shadow:0 0 8px #829a73}.top-right{margin-left:auto;display:flex;align-items:center;gap:25px}.header-data{color:#77796e}.header-data b{color:#c8c8bb;font-weight:400}.nasa-link{color:#dedbd0;text-decoration:none;border:1px solid #3b3c35;padding:10px 13px;display:flex;gap:9px;align-items:center}.nasa-link:hover{border-color:#d58260}.workspace{display:flex;flex:1;min-height:0}.sidebar{width:326px;flex:none;background:#191a17;border-right:1px solid #35352f;overflow-y:auto;transition:width .25s;scrollbar-width:thin;scrollbar-color:#494a42 transparent}.sidebar.collapsed{width:0;border:0}.side-inner{width:325px;min-height:100%;padding:31px 24px 22px;display:flex;flex-direction:column}.side-heading{display:flex;justify-content:space-between;align-items:center}.eyebrow,.section-title,.count,.layer-text em,.place-index,.place-name small,.status,.sidebar-footer a,.map-title-top,.projection,.layer-indicator small,.coordinates small,.map-credit,.bottom-bar{font-family:'Poppins',sans-serif}.eyebrow{font-size:9px;color:#d38a68;letter-spacing:1.3px}.side-heading h1{font-size:27px;line-height:1.1;margin:13px 0 10px;letter-spacing:-1px;font-weight:600}.side-heading h1 span,.map-title h2 span{color:#d58460}.side-heading p{color:#8d8e83;line-height:1.6;font-size:12px;margin:0}.planet-icon{width:62px;height:62px;border:1px solid #555047;border-radius:50%;position:relative;display:grid;place-items:center;opacity:.9}.planet-icon:after{content:'';position:absolute;width:74px;height:23px;border:1px solid #756253;border-radius:50%;transform:rotate(-28deg)}.planet-icon div{width:45px;height:45px;border-radius:50%;background:radial-gradient(circle at 31% 27%,#d39c79,#98543a 45%,#3f2821 75%);box-shadow:inset -9px -4px 9px #30221d}.section-divider{height:1px;background:#363730;margin:27px 0 25px}.section-title{display:flex;justify-content:space-between;align-items:center;color:#deded4;letter-spacing:1.1px;font-size:10px;font-weight:700}.section-title>span:first-child{display:flex;gap:9px;align-items:center}.section-title svg{color:#d78a68}.count{font-size:9px;color:#77786d}.section-description{font-size:11px;color:#818278;margin:10px 0 16px}.layer-list{display:flex;flex-direction:column;gap:7px}.layer-card{width:100%;border:1px solid #373831;background:#20211d;display:flex;align-items:center;text-align:left;padding:8px;gap:11px;color:#e5e2d9;min-height:76px}.layer-card:hover{border-color:#8b6b58}.layer-card.active{background:#2e2923;border-color:#a66f52}.layer-thumb{height:56px;width:56px;flex:none;background-size:cover;background-position:center;border:1px solid #4d493d}.layer-thumb.thermal{display:grid;place-items:center;color:#ccc1b1;font:10px 'Poppins',sans-serif;overflow:hidden;background:#20211d}
+.layer-thumb img{width:100%;height:100%;object-fit:cover;display:block}.layer-text{min-width:0;flex:1}.layer-text strong{display:block;font-size:12px;font-weight:600;white-space:nowrap}.layer-text small{display:block;color:#9a9a8e;font-size:10px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.layer-text em{display:block;color:#b8a28e;font-size:8px;font-style:normal;margin-top:6px;letter-spacing:.3px}.radio{width:14px;height:14px;border:1px solid #77776d;border-radius:50%;display:grid;place-items:center;flex:none;margin-right:2px}.active .radio{border-color:#d88863}.radio span{width:6px;height:6px;background:#df8d68;border-radius:50%}.opacity-label{display:flex;justify-content:space-between;margin:19px 0 9px;color:#a8a89c;font-size:11px}.opacity-label span:last-child{font-family:'Poppins',sans-serif;color:#d3b19d;font-size:10px}.range{appearance:none;width:100%;height:3px;background:linear-gradient(to right,#d88b67 var(--fill),#484a40 var(--fill));margin:0;cursor:pointer}.range::-webkit-slider-thumb{appearance:none;width:11px;height:11px;background:#e9e4d8;border-radius:50%;border:2px solid #d88b67}.places-divider{margin:26px 0 24px}.places{margin-top:-3px}.places button{width:100%;height:49px;display:flex;align-items:center;gap:12px;color:#b2b1a7;background:none;border:0;border-bottom:1px solid #30312b;text-align:left;padding:0}.places button:hover .place-name{color:#df906b}.place-index{color:#77776e;font-size:9px}.place-name{flex:1;color:#d8d7cd;font-size:11px}.place-name small{display:block;color:#77786d;font-size:8px;letter-spacing:.4px;margin-top:3px}.places svg{color:#73756a}.sidebar-footer{margin-top:auto;padding-top:25px;display:flex;justify-content:space-between;align-items:center;gap:5px}.status{color:#898b7d;font-size:8px;letter-spacing:.25px}.status .live-dot{width:5px;height:5px;margin-right:5px}.sidebar-footer a{color:#ada99b;font-size:9px;text-decoration:none;display:flex;gap:5px;align-items:center;white-space:nowrap}.map-area{position:relative;flex:1;min-width:0;background:#1a1815;overflow:hidden}.map{position:absolute!important;inset:0;background:#1b1815!important;z-index:0}.leaflet-container{font:inherit}.leaflet-tile{filter:brightness(.78) saturate(.78) contrast(1.06)}.map-area:after{content:'';pointer-events:none;position:absolute;inset:0;z-index:400;background:linear-gradient(180deg,rgba(13,14,12,.33),transparent 26%,transparent 68%,rgba(12,13,11,.42)),linear-gradient(90deg,rgba(16,16,13,.18),transparent 40%)}.map-top,.map-title,.map-controls,.map-bottom,.map-credit,.error-banner,.info-pop{position:absolute;z-index:500}.map-top{top:22px;left:24px;right:24px;display:flex;align-items:center;gap:10px}.icon-btn{height:42px;width:42px;background:#191a17eF;color:#c9c8bc;border:1px solid #515047;display:grid;place-items:center}.icon-btn:hover,.map-controls button:hover{color:#e49570;background:#292923}.search-wrap{height:42px;width:280px;background:#191a17ef;border:1px solid #515047;display:flex;align-items:center;gap:10px;padding:0 12px;color:#a9a99d;position:relative}.search-wrap input{border:0;background:none;outline:none;color:#eee;width:100%;font-size:12px}.search-wrap input::placeholder{color:#999b8d}.search-key{border:1px solid #505047;border-radius:2px;font:10px 'Poppins';padding:1px 5px;color:#86877d}.search-results{position:absolute;top:47px;left:-1px;right:-1px;background:#1b1c18;border:1px solid #515047;box-shadow:0 10px 30px #0007}.search-results button{display:flex;gap:10px;align-items:center;width:100%;padding:12px;background:none;color:#ddd;border:0;text-align:left}.search-results button:hover{background:#323129}.search-results button span{flex:1;font-size:12px}.search-results small{display:block;color:#888;font:8px 'Poppins';margin-top:4px}.no-results{padding:15px;font-size:12px;color:#aaa}.map-top-right{margin-left:auto;display:flex;align-items:center;gap:10px}.projection{height:42px;background:#191a17eE;border:1px solid #515047;display:flex;align-items:center;gap:8px;padding:0 13px;color:#c8c8ba;font-size:9px;letter-spacing:.5px}.projection svg{color:#d18a68}.projection span{color:#777}.map-title{top:105px;left:29px;text-shadow:0 2px 12px #0009}.map-title-top{color:#e0c4ad;font-size:9px;letter-spacing:1.5px;display:flex;align-items:center}.map-title-top .orange-dot{box-shadow:0 0 8px #d58460}.map-title-line{width:42px;height:1px;background:#c18b6a;margin-left:12px}.map-title h2{font-size:32px;letter-spacing:-1px;font-weight:500;margin:10px 0 4px}.map-title p{color:#d2c6b9;font-size:12px;margin:0}.map-controls{right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;background:#191a17ef;border:1px solid #55534a}.map-controls button{height:43px;width:43px;border:0;background:none;color:#e2dfd4;display:grid;place-items:center}.control-separator{height:1px;background:#525148;margin:0 8px}.map-bottom{bottom:41px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:15px}.layer-indicator,.coordinates{display:flex;align-items:center;background:#191a17ef;border:1px solid #55534a;padding:12px 15px;gap:12px;min-height:64px}.indicator-icon,.coordinate-icon{color:#d78c69}.layer-indicator small,.coordinates small{display:block;color:#96978a;font-size:8px;letter-spacing:1px;margin-bottom:5px}.layer-indicator strong,.coordinates strong{font-size:11px;font-weight:600;color:#e4e0d5;white-space:nowrap}.indicator-line{height:30px;width:1px;background:#515047;margin:0 3px}.coordinates strong{font-family:'Poppins';font-weight:400;font-size:10px}.coordinates strong span{color:#8a6b59;margin:0 5px}.map-credit{bottom:15px;right:25px;color:#ddd1c1;font-size:8px;letter-spacing:.6px;text-shadow:0 1px 5px #000}.map-credit span{margin:0 6px;color:#c88060}.error-banner{top:195px;left:29px;background:#29241e;border:1px solid #a87856;color:#ead5c3;display:flex;gap:10px;align-items:center;padding:11px 12px;font-size:11px;max-width:400px}.error-banner svg{flex:none;color:#d79268}.error-banner button,.info-pop button{border:0;background:none;color:#ccc;display:grid;place-items:center}.info-pop{top:72px;right:24px;width:280px;padding:18px;background:#1c1d19;border:1px solid #55534a;box-shadow:0 10px 30px #0008}.info-pop button{float:right}.info-pop strong{font-size:13px}.info-pop p{font-size:12px;color:#aaa;line-height:1.6}.info-pop a{font-size:11px;color:#dc9270}.bottom-bar{height:31px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 30px;background:#141512;border-top:1px solid #2c2d28;color:#84867a;font-size:8px;letter-spacing:.7px;z-index:10}.bottom-bar .live-dot{height:5px;width:5px}.footer-sep{padding:0 12px;color:#505148}.footer-star{color:#d48965;font-size:13px;margin-left:7px}
+@media(max-height:850px){.side-inner{padding-top:23px}.section-divider{margin:20px 0}.layer-card{min-height:67px}.layer-thumb{height:48px;width:48px}.places button{height:42px}.sidebar-footer{padding-top:18px}}@media(max-width:800px){.header-label,.header-data{display:none}.top-divider{display:none}.brand{min-width:0}.sidebar{width:280px}.side-inner{width:279px;padding-left:17px;padding-right:17px}.projection{display:none}.map-title h2{font-size:26px}}@media(max-width:600px){.app{min-height:500px}.topbar{height:58px;padding:0 15px}.brand-mark{height:29px;width:29px}.nasa-link{font-size:8px;padding:8px}.sidebar{position:absolute;top:58px;bottom:31px;z-index:700;box-shadow:10px 0 30px #0008}.sidebar.collapsed{box-shadow:none}.map-top{left:12px;right:12px;top:12px}.search-wrap{width:min(230px,calc(100vw - 120px))}.map-title{left:16px;top:85px}.map-title h2{font-size:24px}.map-bottom{left:12px;right:12px;bottom:35px}.indicator-res,.indicator-line{display:none}.layer-indicator,.coordinates{padding:10px;gap:8px}.coordinates strong{font-size:9px}.map-controls{right:12px}.map-credit{right:12px;font-size:7px}.bottom-bar{padding:0 15px;font-size:7px}.bottom-bar>div:last-child{display:none}}
+/* Geographic labels are independent of the underlying imagery layer. */
+.landmark-icon{display:flex!important;align-items:center;gap:7px;white-space:nowrap;background:none;border:0}.landmark-dot{width:11px;height:11px;flex:none;border-radius:50%;background:#e0926c;border:2px solid #fff2df;box-shadow:0 0 0 3px #c7794c70,0 1px 8px #000}.landmark-label{color:#fff7e9;background:#1b1a17d9;border:1px solid #ffffff40;padding:5px 8px;font:600 11px 'Poppins',sans-serif;letter-spacing:.1px;text-shadow:0 1px 2px #000;box-shadow:0 2px 8px #0005}.landmark-icon:hover .landmark-label{border-color:#e0926c;background:#28231e}.leaflet-popup-content-wrapper,.leaflet-popup-tip{background:#1e1f1b;color:#e8e5dd;border-radius:0}.leaflet-popup-content-wrapper{border:1px solid #6a5b4e;box-shadow:0 8px 25px #0009}.leaflet-popup-content{margin:14px 18px;min-width:190px}.landmark-popup>span{display:block;font:9px 'Poppins',sans-serif;letter-spacing:1px;color:#d58a68}.landmark-popup strong{display:block;margin-top:6px;font-size:15px}.landmark-popup p{margin:7px 0 10px;color:#bcb9ad;font-size:11px;line-height:1.5}.landmark-popup small{font:9px 'Poppins',sans-serif;color:#c2a795}.leaflet-container a.leaflet-popup-close-button{color:#bcb9ad}
+
+/* Route Panel & Traverse Controls */
+.route-panel{position:absolute;z-index:501;right:24px;top:82px;width:280px;max-height:calc(100vh - 110px);overflow-y:auto;background:#191a17f2;border:1px solid #565249;padding:16px;box-shadow:0 8px 25px #0005;scrollbar-width:thin;scrollbar-color:#494a42 transparent}.route-heading{display:flex;justify-content:space-between;align-items:center}.route-kicker{font:8px 'Poppins',sans-serif;letter-spacing:1px;color:#d58a68}.route-heading h3{font-size:16px;font-weight:600;margin:5px 0 0;letter-spacing:-.2px}.route-clear{background:none;border:0;color:#a9aa9d;font-size:10px;padding:5px}.route-clear:hover{color:#e79b77}.route-clear:disabled{opacity:.4;cursor:default}.route-intro{font-size:11px;color:#a7a69b;margin:9px 0 12px}.route-points{display:flex;flex-direction:column;gap:6px}.route-select{width:100%;display:flex;align-items:center;gap:9px;color:#c4c1b6;text-align:left;background:#252621;border:1px solid #45463d;padding:8px}.route-select:hover,.route-select.selecting{border-color:#d78a68;background:#302920}.route-select>svg{color:#bb9a84;flex:none}.route-letter,.route-point-icon span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#1b1916;font-size:10px;font-weight:700;flex:none}.route-point-text{flex:1;min-width:0}.route-point-text strong{display:block;font-size:10px;color:#e4e2d9}.route-point-text small{display:block;margin-top:3px;font:8px 'Poppins',sans-serif;color:#a9a79b;white-space:nowrap}.route-select.selecting small{color:#edaa83}
+
+/* Mode Selection Section */
+.route-mode-section{margin-top:10px;background:#20211d;border:1px solid #3b3c33;padding:10px}.route-mode-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}.route-label-tiny{font:8px 'Poppins',sans-serif;letter-spacing:1px;color:#d58a68;font-weight:600}.route-mode-select{background:#141512;border:1px solid #4e4f44;color:#e7e4dc;font-size:10px;padding:3px 6px;outline:none;cursor:pointer}.route-mode-buttons{display:flex;gap:5px}.mode-pill{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;background:#181916;border:1px solid #44453b;color:#a7a69b;padding:6px 3px;font-size:10px;font-weight:500;transition:all .15s ease}.mode-pill:hover:not(:disabled){border-color:#d88b67;color:#e8e5dd}.mode-pill.active{background:#38271d;border-color:#df865f;color:#ffcca8;font-weight:700;box-shadow:inset 0 0 8px #df865f33}.mode-explainer{font-size:9px;color:#8f9184;line-height:1.45;margin:7px 0 0}
+
+.calculate-btn{width:100%;background:#d98b66;color:#1d1b17;border:0;display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;margin-top:12px;font-size:11px;font-weight:700}.calculate-btn:hover:not(:disabled){background:#efaa85}.calculate-btn:disabled{background:#565047;color:#a5a097;cursor:not-allowed}.route-note{font:8px 'Poppins',sans-serif;color:#939285;margin:10px 0 0;line-height:1.4;text-align:center}.route-error{font-size:10px;color:#f87171;line-height:1.4;margin:9px 0 0;background:#450a0a55;padding:6px 8px;border:1px solid #dc2626}.route-point-icon{background:none;border:0}.route-point-icon span{width:26px;height:26px;border:2px solid #fff0de;box-shadow:0 0 0 3px #c7794c80,0 2px 9px #0009}
+
+/* Route Results Display */
+.route-result-box{margin-top:12px;border-top:1px solid #363730;padding-top:10px}.verdict-banner{display:flex;align-items:center;gap:7px;border:1px solid;padding:6px 9px;font-size:10px;letter-spacing:.6px;font-weight:700}.route-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}.stat-card{background:#20211d;border:1px solid #373831;padding:7px 8px}.stat-label{display:block;font:7px 'Poppins',sans-serif;letter-spacing:.8px;color:#8c8e82}.stat-val{display:block;font-size:12px;color:#edb18e;margin-top:2px;font-weight:600}.route-reason-note{font-size:9px;color:#c9c5ba;line-height:1.45;background:#171815;border-left:2px solid #df865f;padding:6px 8px;margin:8px 0 0}.route-source-note{font:8px 'Poppins',sans-serif;color:#828376;margin:6px 0 0;text-align:right}
+
+/* Landmark Popup Actions */
+.popup-route-actions{display:flex;gap:6px;margin-top:10px}.popup-route-actions button{flex:1;background:#2e2923;border:1px solid #8b6b58;color:#edb290;font-size:9px;padding:5px 3px;text-align:center}.popup-route-actions button:hover{background:#d58a66;color:#1a1713}
+
+@media(max-width:800px){.route-panel{right:12px;top:67px;width:250px;padding:12px}.map-controls{top:auto;bottom:120px;transform:none}}@media(max-width:600px){.route-panel{top:64px;width:220px;right:10px;padding:10px}.route-intro{margin:6px 0 8px}.route-select{padding:6px}.route-note{font-size:7px}.map-title{max-width:calc(100% - 240px)}.map-title h2{font-size:20px}.map-title-top{font-size:8px}.map-title p{font-size:10px}.error-banner{top:auto;bottom:110px;left:12px;right:55px}}
+.planner-toggle{height:36px;padding:0 12px;display:flex;align-items:center;gap:7px;border:1px solid #a06e53;background:#2e2923;color:#edb290;font:700 9px 'Poppins',sans-serif;letter-spacing:.5px}.planner-toggle:hover,.planner-toggle.active{background:#d58a66;color:#1d1b17;border-color:#d58a66}.selecting-map .leaflet-container,.selecting-map .leaflet-grab{cursor:crosshair!important}.map-select-notice{position:absolute;z-index:502;left:50%;bottom:120px;transform:translateX(-50%);display:flex;align-items:center;gap:9px;background:#29231d;border:1px solid #d88d68;box-shadow:0 4px 20px #0009;color:#f1dfcf;padding:11px 13px;font-size:11px;white-space:nowrap}.map-select-notice svg{color:#e8a37f}.map-select-notice button{border:0;background:none;color:#dca27f;text-decoration:underline;font-size:10px;padding:0 0 0 6px}@media(max-width:800px){.top-right{gap:9px}}@media(max-width:600px){.planner-toggle{padding:0 8px;font-size:8px;height:34px}.topbar{gap:8px}.top-right{gap:7px}.nasa-link{padding:8px 7px}.map-select-notice{bottom:115px;max-width:calc(100% - 24px);font-size:10px;white-space:normal}.map-title{pointer-events:none}}
+.layer-text strong{font-size:11px;font-weight:700}.map-bottom{justify-content:flex-end}@media(max-width:600px){.sidebar{bottom:0}}
+.coverage-note{font-size:10px;color:#a5a397;line-height:1.5;margin:12px 0 0}
+
+/* Minimalist Drawer & Path Planner Controls */
+.mobile-drawer-toggle {
+  display: none;
+}
+
+.sidebar-sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #191a17;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 12px;
+  border-bottom: 1px solid #2d2e27;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.side-inner {
+  padding-top: 14px !important;
+}
+
+.drawer-close-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid #3c3d36;
+  color: #9d9e93;
+  border-radius: 4px;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.drawer-close-btn:hover {
+  background: #23241f;
+  border-color: #65665a;
+  color: #ece9e0;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Route Panel Header Actions & Minimize Button */
+.route-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.route-minimize-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 1px solid #3c3d36;
+  color: #9d9e93;
+  border-radius: 4px;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.route-minimize-btn:hover {
+  background: #23241f;
+  border-color: #65665a;
+  color: #ece9e0;
+}
+
+/* Floating Little Unhide Icon for Route Planner */
+.planner-unhide-btn {
+  position: absolute;
+  z-index: 501;
+  right: 24px;
+  top: 82px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: #191a17f2;
+  border: 1px solid #565249;
+  color: #c9c7be;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.15s ease;
+}
+
+.planner-unhide-btn:hover {
+  background: #252621;
+  border-color: #8c897e;
+  color: #f2efe6;
+}
+
+@media (max-width: 800px) {
+  .sidebar-sticky-header {
+    padding: 14px 17px 12px;
+  }
+  .mobile-drawer-toggle {
+    display: inline-grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: 1px solid #3c3d36;
+    color: #9d9e93;
+    border-radius: 4px;
+    padding: 0;
+    transition: all 0.15s ease;
+  }
+  .mobile-drawer-toggle:hover {
+    background: #23241f;
+    border-color: #65665a;
+    color: #ece9e0;
+  }
+  .planner-unhide-btn {
+    right: 12px;
+    top: 67px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 650;
+    cursor: pointer;
+  }
+  .sidebar {
+    z-index: 700;
+    bottom: 0;
+  }
+  .mobile-drawer-toggle {
+    width: 32px;
+    height: 32px;
+  }
+  .planner-unhide-btn {
+    right: 10px;
+    top: 64px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Seamless Map Loading & Martian Crust Warm Background */
+.map {
+  background: radial-gradient(circle at 50% 50%, #3e2219 0%, #29150f 50%, #150906 100%) !important;
+}
+
+.leaflet-container {
+  background: radial-gradient(circle at 50% 50%, #3e2219 0%, #29150f 50%, #150906 100%) !important;
+}
