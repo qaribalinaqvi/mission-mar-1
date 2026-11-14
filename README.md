@@ -13,7 +13,7 @@
 | :--- | :--- |
 | **Syed Qarib Ali Naqvi** | [@qaribnaqvi](https://github.com/qaribnaqvi) |
 | **Anees Iqbal** | [@anees_iqbal](https://github.com/anees_iqbal) |
-| **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz.01) |
+| **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz01) |
 | **Syed Muhammad Ali Hussain** | [@ma931816](https://github.com/ma931816) |
 | **Syed Khesham Ali** | [@shahsawar](https://github.com/shahsawar) |
 
