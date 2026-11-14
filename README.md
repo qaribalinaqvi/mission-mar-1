@@ -1,4 +1,4 @@
-# 🔴 Mission Mars 1.0
+# Mission Mars 1.0
 ### Planetary Surface Explorer & EVA Mission Control
 
 > **NASA Space Apps Challenge 2026**  
