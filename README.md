@@ -14,7 +14,7 @@
 | **Syed Qarib Ali Naqvi** | [@qaribnaqvi](https://github.com/qaribnaqvi) |
 | **Muhammad Raza Naqvi** | [@mastonaqvi](https://github.com/mastonaqvi) |
 | **Anees Iqbal** | [@anees_iqbal](https://github.com/anees_iqbal) |
-| **Ahmad Nawaz** | [@ahmadnawaz.23](https://github.com/ahmadnawaz.23) |
+| **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz.01) |
 | **Syed Muhammad Ali Hussain** | [@ma931816](https://github.com/ma931816) |
 | **Syed Khesham Ali** | [@shahsawar](https://github.com/shahsawar) |
 
