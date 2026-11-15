@@ -12,7 +12,7 @@
 | Name | GitHub |
 | :--- | :--- |
 | **Syed Qarib Ali Naqvi** | [@qaribalinaqvi](https://github.com/qaribalinaqvi) |
-| **Anees Iqbal** | [@anees_iqbal](https://github.com/aneesiqbal-dev) |
+| **Anees Iqbal** | [@aneesiqbal-dev](https://github.com/aneesiqbal-dev) |
 | **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz01) |
 | **Syed Muhammad Ali Hussain** | [@ma931816](https://github.com/ma931816) |
 | **Syed Khesham Ali** | [@kheshamsyed05](https://github.com/kheshamsyed05) |
