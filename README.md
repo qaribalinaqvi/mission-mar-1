@@ -16,7 +16,7 @@
 | **Ahmad Nawaz** | [@ahmadnawaz.01](https://github.com/ahmadnawaz01) |
 | **Syed Muhammad Ali Hussain** | [@ma931816](https://github.com/ma931816) |
 | **Syed Khesham Ali** | [@kheshamsyed05](https://github.com/kheshamsyed05) |
-| **Muhammad Raza Naqvi** | [@mastonaqvi] (https://github.com/mastonaqvi) |
+| **Muhammad Raza Naqvi** | [@mastonaqvi](https://github.com/mastonaqvi) |
 
 ---
 
